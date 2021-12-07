@@ -25,13 +25,13 @@ int main()
     int ind, wordFreq;
     string srchWord;
 
-    docsName = readFile("docsName.txt");
-    suff = readFile("suffixes.txt");
-    pref = readFile("prefixes.txt");
+    docsName = readFile("docs/docsName.txt");
+    suff = readFile("docs/suffixes.txt");
+    pref = readFile("docs/prefixes.txt");
 
     for (auto itv = docsName.begin(); itv != docsName.end(); itv++)
     {
-        words = readFile(*itv);
+        words = readFile("docs/" +*itv);
         words = mySteamming(words, suff, pref);
         for (int i = 0; i < words.size(); i++)
         {
